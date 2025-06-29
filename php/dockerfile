@@ -1,0 +1,46 @@
+# Use PHP 8.3.21 with FPM (FastCGI Process Manager) on Alpine Linux as base image
+# Alpine is a lightweight Linux distribution, making the image smaller and more secure
+FROM php:8.3.21-fpm-alpine
+
+# Install PHP PDO and PDO MySQL extensions
+# PDO (PHP Data Objects) provides a consistent interface for database access
+# PDO MySQL enables MySQL database connectivity
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Create custom PHP configuration file
+RUN echo "upload_max_filesize = 40M" > /usr/local/etc/php/conf.d/uploads.ini && \
+    echo "post_max_size = 40M" >> /usr/local/etc/php/conf.d/uploads.ini && \
+    echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini && \
+    echo "max_input_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini && \
+    echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/uploads.ini && \
+    echo "max_input_vars = 3000" >> /usr/local/etc/php/conf.d/uploads.ini
+
+# Set the working directory to the htdocs directory
+WORKDIR /htdocs
+# Allow Composer to run as root user
+# This is needed for Docker builds where commands run as root
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
+# Copy Composer from the official Composer image
+# This ensures we get the latest stable version of Composer
+ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Copy the composer.json and composer.lock files from the current directory
+COPY ./htdocs/composer.* ./
+
+
+
+
+# Install Composer dependencies
+#RUN composer install --no-dev --no-interaction --no-progress --no-suggest --no-suggest-doc --no-suggest-report
+# RUN composer install --no-interaction --optimize-autoloader --no-dev
+
+
+
+# RUN composer dump-autoload --optimize --no-dev
+
+# Copy the rest of the application code
+COPY ./htdocs/ .
+
+# # Expose port 9000 for PHP-FPM
+EXPOSE 9000
