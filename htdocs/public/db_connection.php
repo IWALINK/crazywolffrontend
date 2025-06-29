@@ -28,7 +28,8 @@
 //     throw new PDOException($e->getMessage(), (int)$e->getCode());
 // }
 
-$host = 'host.docker.internal';  // ou 'localhost' 
+$host = '213.200.245.249';  // ou 'localhost'  213.200.245.249
+
 $db   = 'laravel';    // correspond à MYSQL_DATABASE
 $user = 'laravel';    // correspond à MYSQL_USER
 $pass = 'laravel';     // correspond à MYSQL_PASSWORD
