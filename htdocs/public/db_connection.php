@@ -28,7 +28,7 @@
 //     throw new PDOException($e->getMessage(), (int)$e->getCode());
 // }
 
-$host = '213.200.245.249';  // ou 'localhost'  213.200.245.249
+$host = '172.19.0.2';  // ou 'localhost'  213.200.245.249
 
 $db   = 'laravel';    // correspond à MYSQL_DATABASE
 $user = 'laravel';    // correspond à MYSQL_USER
