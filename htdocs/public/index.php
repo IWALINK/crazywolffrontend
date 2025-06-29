@@ -462,7 +462,7 @@
                                 formData.append('type', 'contact');
 
                                 // Send AJAX request to Laravel backend
-                                fetch('http://localhost:8000/api/contact', {
+                                fetch('https://backend.crazywolf-lausanne.com/api/contact', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',
@@ -919,7 +919,7 @@
                                 const formData = new FormData(privatisationForm);
 
                                 // Send AJAX request to Laravel backend
-                                fetch('http://localhost:8000/api/privatisation', {
+                                fetch('https://backend.crazywolf-lausanne.com/api/privatisation', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',

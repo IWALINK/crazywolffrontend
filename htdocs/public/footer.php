@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        fetch('http://localhost:8000/api/menu-images')
+        fetch('https://backend.crazywolf-lausanne.com/api/menu-images')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
