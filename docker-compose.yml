@@ -2,23 +2,25 @@ services:
   web:
     image: nginx:latest
     ports:
-      - "8080:80"
+      - "8002:80"
+      - "4000:443"
     volumes:
-      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/conf.d/public.conf:/etc/nginx/conf.d/default.conf
       - ./htdocs:/htdocs:ro
-    # networks:
-    #   - laravel-app_laravel
+      - ./nginx/ssl:/etc/nginx/ssl:ro
     depends_on:
       - app
+    networks:
+      - crazywolf-lausanne
 
   app:
     build:
       dockerfile: ./php/Dockerfile
     volumes:
       - ./htdocs:/htdocs
-    # networks:
-    #   - laravel-app_laravel
+    networks:
+      - crazywolf-lausanne
 
-# networks:
-#   laravel-app_laravel:
-#     external: true  # Reference the existing network
+networks:
+  crazywolf-lausanne:
+    driver: bridge
