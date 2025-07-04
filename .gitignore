@@ -1,0 +1,32 @@
+# Node, Composer, and PHP dependencies
+/vendor/
+/node_modules/
+
+# Environment files
+.env
+htdocs/.env
+
+# Database files and folders
+db/
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+*.sock
+
+# IDE and editor folders
+.idea/
+.vscode/
+
+# Nginx SSL and config backups
+nginx/ssl/
+nginx/conf.d/*.bak
+
+# Misc
+htdocs/public/*.log 
