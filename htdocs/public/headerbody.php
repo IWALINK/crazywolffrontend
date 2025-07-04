@@ -79,7 +79,7 @@
           <div class="overlay-mobile-nav"></div>
           <div class="inner-mobile-nav">
               <a href="index.html" rel="home" class="main-logo">
-                  <img id="mobile-logo_header" alt="" src="assets/images/logo/logo-dark.png"
+                  <img id="mobile-logo_header" alt="" src="assets/images/logo/logo.png"
                       data-retina="assets/images/logo/logo-dark@2x.png">
               </a>
               <div class="mobile-nav-close">
