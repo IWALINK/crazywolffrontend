@@ -78,9 +78,9 @@
       <div class="mobile-nav-wrap">
           <div class="overlay-mobile-nav"></div>
           <div class="inner-mobile-nav">
-              <a href="index.html" rel="home" class="main-logo">
+              <a href="index.php" rel="home" class="main-logo">
                   <img id="mobile-logo_header" alt="" src="assets/images/logo/logo.png"
-                      data-retina="assets/images/logo/logo-dark@2x.png">
+                      data-retina="assets/images/logo/logo.png">
               </a>
               <div class="mobile-nav-close">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -118,7 +118,7 @@
           <div class="overlay-canvas-nav"></div>
           <div class="inner-canvas-nav">
               <div class="side-bar">
-                  <a href="index.html" rel="home" class="main-logo">
+                  <a href="index.php" rel="home" class="main-logo">
                       <img id="logo_header_1" alt="" src="assets/images/logo/logo.png">
                   </a>
                   <div class="canvas-nav-close">
